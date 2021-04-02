@@ -1,8 +1,8 @@
 import { log } from "../support/logger-utils"
-import { GET_APIData , GET_APIResponseCode } from "../support/api-utl"
+import { GET_APIData, GET_APIResponseCode } from "../support/api-utl"
 
 
-const {Given, When, And, Then, Before } = require("cucumber")
+const { Given, When, And, Then, Before } = require("@cucumber/cucumber")
 
 let apiResponseCode
 
@@ -20,6 +20,6 @@ Then(/^I expect response code is (-?\d+)$/, async function (expectedResponseCode
 	log(`Actual Response Code ${apiResponseCode}`)
 
 
-	expect(apiResponseCode).toEqual(parseInt(expectedResponseCode),`Expected Response Code to be "${expectedResponseCode}" but found "${apiResponseCode}"`);
+	expect(apiResponseCode).toEqual(parseInt(expectedResponseCode), `Expected Response Code to be "${expectedResponseCode}" but found "${apiResponseCode}"`);
 })
 
